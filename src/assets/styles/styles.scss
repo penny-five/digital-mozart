@@ -1,7 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900');
 @import '~sanitize.css';
 
 @import './variables';
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-family;
+  font-size: $font-size-default;
+  color: $color-black;
+}
+
+h1 {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 4.1rem;
+  font-weight: $font-weight-light;
+  background: linear-gradient(rgb(90, 134, 250), rgb(187, 77, 230), rgb(170, 51, 51));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  margin: 85px auto 100px;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: $font-weight-extrabold;
+}
+
+p {
+  line-height: 30px;
 }
