@@ -33,8 +33,11 @@ export const creatSampleMachine = params => {
 
   return {
     play() {
+      loop.fade(0, 1, 2000);
       loop.play();
-      play(params.samples[0]);
+      setTimeout(() => {
+        play(params.samples[0]);
+      }, _.random(1500, 4000));
     },
     stop() {
       loop.stop();

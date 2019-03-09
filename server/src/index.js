@@ -58,7 +58,7 @@ app.post('/api/analyze', multer().single('image'), async (req, res) => {
 
   console.log('Labels:', labels);
 
-  const randomLabels = utils.pickRandom(labels, _.random(3, 5));
+  const randomLabels = utils.pickRandom(labels, _.random(3, 6));
 
   const translatedLabels = await Promise.all(randomLabels.map(translate));
 
