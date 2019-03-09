@@ -1,0 +1,16 @@
+@mixin buttonize {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 4px;
+  font-weight: $font-weight-medium;
+
+  &:hover,
+  &:active {
+    background-color: $color-grey-100;
+    cursor: pointer;
+  }
+}
