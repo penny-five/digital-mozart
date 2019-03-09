@@ -5,7 +5,7 @@
       <span>Back</span>
     </button>
     <equalizer class="equalizer" />
-    <span class="song-title">Lorem ipsum</span>
+    <span class="song-title">{{ title }}</span>
     <span class="now-playing">Now playing</span>
   </div>
 </template>
@@ -19,6 +19,11 @@ export default {
   iconBack,
   components: {
     Equalizer
+  },
+  computed: {
+    title() {
+      return this.$store.state.song.title();
+    }
   },
   methods: {
     onNavigateBack() {

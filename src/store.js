@@ -8,7 +8,8 @@ Vue.use(Vuex);
 
 const createState = () => {
   return {
-    status: 'WAITING'
+    status: 'WAITING',
+    song: null
   };
 };
 
@@ -17,17 +18,26 @@ export default new Vuex.Store({
   mutations: {
     setStatus(state, status) {
       state.status = status;
+    },
+    clearSong() {
+      if (this.state.song != null) {
+        this.state.song.stop();
+      }
+      this.state.song = null;
     }
   },
   actions: {
     async reset({ commit }) {
       commit('setStatus', 'WAITING');
+      commit('clearSong');
     },
     async generateSong({ commit }, file) {
-      await compose(file);
       commit('setStatus', 'LOADING');
-      await sleep(3000);
+
+      const [song] = await Promise.all([compose(file), sleep(3000)]);
+      this.state.song = song;
       commit('setStatus', 'READY');
+      song.play();
     }
   }
 });
