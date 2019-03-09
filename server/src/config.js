@@ -14,8 +14,7 @@ const samples = [
   '13.wav',
   '14.wav',
   '15.wav',
-  '16.wav',
-  '17.wav'
+  '16.wav'
 ];
 
 const voices = [
@@ -41,11 +40,8 @@ const titleGenerators = [
   ([title]) => `Kesä ja ${title}`,
   ([title]) => `${title} ja rakkaus`,
   ([title]) => `${title}!`,
-  ([title]) => `${title}, armaani`,
+  ([title]) => `${title}, armaani!`,
   ([title]) => `${title}, ${title}, ${title}`,
-  ([title]) => `Isäpapan ${title}`,
-  ([title]) => `${title}, Armaani`,
-  ([title]) => `Suuri ${title}`,
   ([title]) => `Yöllinen ${title}`,
   ([title]) => `Sinä olet ${title}`,
   ([title]) => `Tule ${title}`,
@@ -57,9 +53,11 @@ const titleGenerators = [
   ([title, title2]) => `${title} ja ${title2}`,
   ([title]) => `Viimeinen ${title}`,
   ([title]) => `Tuhatvuotinen ${title}`,
+  ([title]) => `Ikuinen ${title}`,
   ([title]) => `Sydämeni ${title}`,
   ([title]) => `Sinulle, ${title}`,
-  ([title, title2]) => `${title}, ${title2} ja rakkautta`
+  ([title, title2]) => `${title}, ${title2} ja rakkautta`,
+  ([title]) => `All you need is ${title}`
 ];
 
 module.exports = { samples, voices, titleGenerators };
