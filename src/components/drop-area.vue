@@ -49,8 +49,7 @@ export default {
      * @param {File} file
      */
     onFileAdded(file) {
-      file;
-      // TODO
+      this.$emit('drop', file);
     }
   }
 };

@@ -6,8 +6,9 @@
       </div>
     </header>
     <main class="main">
-      <page-player v-if="showPlayer" />
-      <page-front v-else />
+      <page-front v-if="status === 'WAITING'" />
+      <page-loading v-else-if="status === 'LOADING'" />
+      <page-player v-else-if="status === 'READY'" />
     </main>
     <footer class="footer">
       <div class="content">
@@ -19,17 +20,19 @@
 
 <script>
 import PageFront from './components/page-front';
+import PageLoading from './components/page-loading';
 import PagePlayer from './components/page-player';
 
 export default {
   name: 'app',
   components: {
     PageFront,
+    PageLoading,
     PagePlayer
   },
   computed: {
-    showPlayer() {
-      return true;
+    status() {
+      return this.$store.state.status;
     }
   }
 };

@@ -21,7 +21,9 @@ export default {
     Equalizer
   },
   methods: {
-    onNavigateBack() {}
+    onNavigateBack() {
+      this.$store.dispatch('reset');
+    }
   }
 };
 </script>

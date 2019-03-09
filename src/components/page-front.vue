@@ -13,7 +13,7 @@
         </p>
         <p>Welcome to the new era of music.</p>
       </section>
-      <drop-area class="drop-area" />
+      <drop-area class="drop-area" @drop="onFileDropped" />
     </div>
   </div>
 </template>
@@ -24,6 +24,11 @@ import DropArea from './drop-area';
 export default {
   components: {
     DropArea
+  },
+  methods: {
+    onFileDropped(file) {
+      this.$store.dispatch('generateSong', file);
+    }
   }
 };
 </script>

@@ -1,10 +1,19 @@
 const path = require('path');
 
-process.env.VUE_APP_GCLOUD_API_KEY = process.env.GCLOUD_API_KEY;
+process.env.VUE_APP_BACKEND_URI = process.env.BACKEND_URI;
+process.env.VUE_APP_GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 module.exports = {
   lintOnSave: false,
   productionSourceMap: false,
+  devServer: {
+    proxy: {
+      '/api': {
+        target: process.env.BACKEND_URI,
+        secure: false
+      }
+    }
+  },
   css: {
     loaderOptions: {
       sass: {
