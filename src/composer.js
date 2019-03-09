@@ -10,18 +10,18 @@ export const creatSampleMachine = params => {
   let stopped = false;
 
   const onend = async () => {
-    await sleep(_.random(500, 3000));
+    await sleep(_.random(1000, 5000));
 
     if (stopped) return;
 
-    currentIndex = currentIndex >= params.samples.length - 1 ? 0 : currentIndex + 1;
+    currentIndex = _.random(0, params.samples.length - 1);
     play(params.samples[currentIndex]);
   };
 
   const loop = new Howl({
     src: params.loop,
     loop: true,
-    volume: 0.6
+    volume: 0.7
   });
 
   const play = sample => {

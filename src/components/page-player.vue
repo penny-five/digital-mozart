@@ -53,7 +53,7 @@ export default {
   }
 
   .equalizer {
-    margin: 70px auto 30px;
+    margin: 70px auto 40px;
   }
 
   .song-title {
