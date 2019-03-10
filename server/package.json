@@ -14,6 +14,7 @@
     "nodemon": "^1.18.10"
   },
   "scripts": {
-    "start": "GOOGLE_APPLICATION_CREDENTIALS=./credentials.json PORT=8090 nodemon src/index.js -w src/**/*.js"
+    "dev": "GOOGLE_APPLICATION_CREDENTIALS=./.credentials.json PORT=80 nodemon src/index.js -w src/**/*.js",
+    "start": "GOOGLE_APPLICATION_CREDENTIALS=./.credentials.json PORT=80 node src/index.js"
   }
 }

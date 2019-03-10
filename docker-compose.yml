@@ -1,0 +1,14 @@
+version: '3'
+services:
+  digital-mozart-client:
+    build: client
+    ports:
+      - '8065:80'
+    links:
+      - digital-mozart-server
+  digital-mozart-server:
+    build: server
+    ports:
+      - '80'
+    volumes:
+      - .credentials.json:/app/.credentials.json

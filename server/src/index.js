@@ -45,7 +45,7 @@ const synthetize = async ({ text, pitch, speakingRate, voice }) => {
   return Buffer.from(synthesizeResponse.audioContent).toString('base64');
 };
 
-app.post('/api/analyze', multer().single('image'), async (req, res) => {
+app.post('/analyze', multer().single('image'), async (req, res) => {
   console.log('Processing request');
 
   const vision = new ImageAnnotatorClient();
