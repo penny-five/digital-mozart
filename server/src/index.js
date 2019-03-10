@@ -17,7 +17,7 @@ const app = express();
 
 const getRandomLoop = async () => {
   const [filename] = utils.pickRandom(config.samples);
-  const audioFile = await promisify(fs.readFile)(path.join(__dirname, 'loops', filename));
+  const audioFile = await promisify(fs.readFile)(path.join(__dirname, '../assets/loops', filename));
   return Buffer.from(audioFile).toString('base64');
 };
 
